@@ -6,8 +6,8 @@ multiset<int> max1, min1;
 //print
 
 void print(){
-    int a, b;
-    bool f1, f2;
+    float a, b;
+    //bool f1, f2;
     if(max1.size()>min1.size()+1){
                 min1.insert(*max1.rbegin());
                 max1.erase(max1.find(*max1.rbegin()));
@@ -23,10 +23,8 @@ void print(){
     if(max1.size()==min1.size()){
         a = *max1.rbegin();
         b = *min1.begin();
-        f1 = a%2;
-        f2 = b%2;
             double p;
-            p = (a*1.0 + b*1.0)/2.0;
+            p = (a + b)/2.0;
             string s = to_string(p);
             size_t found = s.find('.');
             if(s[found+1]=='5') s.erase(s.begin()+found+2, s.end());
